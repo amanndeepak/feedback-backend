@@ -21,8 +21,17 @@ app.use(express.json({ limit: '20mb' }));
 //   }
 //   next();
 // });
- app.use(cors('*'));
-
+//  app.use(cors('*'));
+app.use(express.json({ limit: '20mb' }));
+app.use(cors({
+  origin: [
+    'http://localhost:3000',
+     'www.gurnirmal.com','https://www.gurnirmal.com/',
+    'feedback-front-amandeeps-projects-6c4ac523.vercel.app' // Your Vercel frontend URL
+  ],
+  methods: ['POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type']
+}));
 
 
 // Read env
