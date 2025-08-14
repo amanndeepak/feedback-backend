@@ -10,18 +10,23 @@ const app = express();
 // Allow JSON up to ~20 MB for base64 payloads
 app.use(express.json({ limit: '20mb' }));
 // Allow your front-end origin during development
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*'); // Allow all origins (replace '*' with specific domains in production)
-  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With');
+// app.use((req, res, next) => {
+//   res.header('Access-Control-Allow-Origin', '*'); // Allow all origins (replace '*' with specific domains in production)
+//   res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+//   res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With');
 
-  // Handle preflight requests (for complex requests like DELETE/PUT with headers)
-  if (req.method === 'OPTIONS') {
-    return res.sendStatus(200);
-  }
-  next();
-});
+//   // Handle preflight requests (for complex requests like DELETE/PUT with headers)
+//   if (req.method === 'OPTIONS') {
+//     return res.sendStatus(200);
+//   }
+//   next();
+// });
 // app.use(cors('*'));
+
+app.use(cors({
+    origin: 'https://www.gurnirmal.com', // or your frontend URL
+    credentials: true
+}));
 
 // Read env
 const {
