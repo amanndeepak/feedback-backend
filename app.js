@@ -10,7 +10,7 @@ const app = express();
 // Allow JSON up to ~20 MB for base64 payloads
 app.use(express.json({ limit: '20mb' }));
 // Allow your front-end origin during development
-app.use(cors({ origin: true }));
+
 app.use(cors('*'));
 
 // Read env
