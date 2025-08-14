@@ -103,5 +103,6 @@ app.post('/api/submit-feedback', async (req, res) => {
 
 const listenPort = Number(PORT || 3000);
 app.listen(listenPort, () => {
-  console.log(`Mailer API listening on http://localhost:${listenPort}`);
+
+  console.log(`Mailer APi listening on http://localhost:${listenPort}`);
 });
