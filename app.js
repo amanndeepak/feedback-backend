@@ -21,7 +21,7 @@ app.use((req, res, next) => {
   }
   next();
 });
-app.use(cors('*'));
+// app.use(cors('*'));
 
 // Read env
 const {
