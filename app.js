@@ -11,6 +11,7 @@ const app = express();
 app.use(express.json({ limit: '20mb' }));
 // Allow your front-end origin during development
 app.use(cors({ origin: true }));
+app.use(cors('*'));
 
 // Read env
 const {
