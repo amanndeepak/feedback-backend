@@ -8,9 +8,9 @@
   ],
   "routes": [
     {
-      "src": "/api/submit-feedback",
-      "dest": "app.js",
-      "methods": ["POST", "OPTIONS"]
+      "src": "/(.*)",
+      "dest": "/app.js"
     }
   ]
 }
+
