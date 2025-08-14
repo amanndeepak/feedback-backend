@@ -21,12 +21,9 @@ app.use(express.json({ limit: '20mb' }));
 //   }
 //   next();
 // });
-// app.use(cors('*'));
+ app.use(cors('*'));
 
-app.use(cors({
-    origin: 'https://www.gurnirmal.com', // or your frontend URL
-    credentials: true
-}));
+
 
 // Read env
 const {
